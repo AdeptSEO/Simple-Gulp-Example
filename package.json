@@ -1,14 +1,48 @@
 {
-	"name": "gulp-start",
+	"name": "progulp",
 	"version": "1.0.0",
-	"description": "",
+	"description": ":fire: A starter boilerplate for coding with Gulp, Nunjucks, Webpack, PostCSS and Sass",
+	"keywords": [
+		"boilerplate",
+		"front-end",
+		"front-end-development",
+		"front-end-starter-kit",
+		"frontend",
+		"gulp-boilerplate",
+		"gulp-nunjucks",
+		"gulp-nunjucks-render",
+		"gulp-postcss",
+		"gulp-scss",
+		"gulp-scss-starter",
+		"gulp-starter",
+		"gulp-starter-kit",
+		"gulp-template",
+		"gulp-webpack",
+		"nunjucks-starter-kit",
+		"nunjucks-templates",
+		"starter-kit",
+		"starter-template",
+		"webpack-stream"
+	],
+	"homepage": "https://github.com/shotlandec1980/Simple-Gulp-Example#readme",
+	"bugs": {
+		"url": "https://github.com/shotlandec1980/Simple-Gulp-Example/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/shotlandec1980/Simple-Gulp-Example.git"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Bagaev Alexander Viktorovich",
+		"email": "info@adeptseo.kz",
+		"url": "https://adeptseo.kz"
+	},
 	"main": "index.js",
 	"scripts": {
 		"start": "gulp development",
 		"build": "cross-env NODE_ENV=production gulp build"
 	},
-	"author": "dj",
-	"license": "ISC",
 	"devDependencies": {
 		"@babel/core": "^7.17.9",
 		"@babel/preset-env": "^7.16.11",
