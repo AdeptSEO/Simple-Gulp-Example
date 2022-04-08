@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+.git
+# .npmrc
+Thumbs.db
+ex_files
+build
+public
+node_modules
+bower_components
+zip
+package-lock.json

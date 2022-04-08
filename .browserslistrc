@@ -1,0 +1,9 @@
+# https://browserl.ist/?q=last+4+version
+# https://github.com/browserslist/browserslist
+# npx browserslist > 0.5%
+# npx browserslist "last 1 version, >1%, Firefox ESR, android 4"
+> 0.5% # На браузер должно приходится не менее 0.5% пользователей
+last 3 versions # Последние 3 версии для каждого браузера
+Firefox ESR # Последний выпуск расширенной поддержки Firefox
+android 4
+not dead # Браузеры с официальной поддержкой

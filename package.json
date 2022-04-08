@@ -1,0 +1,42 @@
+{
+	"name": "gulp-start",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "gulp development",
+		"build": "cross-env NODE_ENV=production gulp build"
+	},
+	"author": "dj",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.17.9",
+		"@babel/preset-env": "^7.16.11",
+		"babel-loader": "^8.2.4",
+		"cross-env": "^7.0.3",
+		"del": "^6.0.0",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-if": "^3.0.0",
+		"gulp-imagemin": "^7.1.0",
+		"gulp-nunjucks-render": "^2.2.3",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "^5.0.0",
+		"gulp-sass-glob": "^1.1.0",
+		"path": "^0.12.7",
+		"sass": "^1.44.0",
+		"terser-webpack-plugin": "^5.3.1",
+		"webpack": "^5.72.0",
+		"webpack-stream": "^7.0.0"
+	},
+	"dependencies": {
+		"@fancyapps/fancybox": "^3.5.7",
+		"@fancyapps/ui": "^4.0.11",
+		"browser-sync": "^2.27.7",
+		"rateyo": "^2.3.2",
+		"jquery": "^3.6.0",
+		"slick-carousel": "^1.8.1",
+		"ion-rangeslider": "^2.3.1",
+		"jquery-form-styler": "^2.0.2"
+	}
+}
