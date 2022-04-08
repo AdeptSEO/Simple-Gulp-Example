@@ -1,15 +1,16 @@
 'use strict';
 
 const { src, dest, watch, parallel, series } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
+
+const browserSync = require('browser-sync').create();
 const gulpif = require('gulp-if');
+const del = require('del');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
-const rename = require('gulp-rename');
 const nunjucksRender = require('gulp-nunjucks-render');
-const del = require('del');
-const browserSync = require('browser-sync').create();
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
@@ -38,8 +39,8 @@ function cleanDist() {
 
 exports.cleanDist = cleanDist;
 
-function nunjucks() {
-	return src('./app/templates/pages/**/*.njk')
+function templates() {
+	return src('./app/templates/**/[^_]*.+(njk|html)')
 		.pipe(nunjucksRender({
 			path: ['./app/templates/']
 		}))
@@ -47,7 +48,7 @@ function nunjucks() {
 		.on('end', browserSync.reload);
 }
 
-exports.nunjucks = nunjucks;
+exports.templates = templates;
 
 function styles() {
 	return src('./app/styles/main.scss', {
@@ -56,7 +57,7 @@ function styles() {
 		.pipe(sassGlob({
 			ignorePaths: ['**/_*.scss'],
 		}))
-		.pipe(sass({
+		.pipe(sass.sync({
 			outputStyle: 'expanded',
 			includePaths: ['./node_modules/', './bower_components/'],
 			indentType: 'tab',
@@ -89,7 +90,7 @@ function scripts() {
 exports.scripts = scripts;
 
 function images() {
-	return src('./app/images/**/*.*')
+	return src('./app/images/**/[^_]*.+(png|jp?(e)g|gif|svg|webp)')
 		.pipe(gulpif(!isDevelopment, imagemin([
 			imagemin.gifsicle({ interlaced: true }),
 			imagemin.mozjpeg({ quality: 75, progressive: true }),
@@ -104,14 +105,21 @@ function images() {
 exports.images = images;
 
 function watching() {
-	watch('./app/templates/**/*.njk', { usePolling: true }, nunjucks);
-	watch('./app/styles/**/*.scss', { usePolling: true }, styles);
-	watch('./app/scripts/**/*.js', { usePolling: true }, scripts);
-	watch('./app/images/**/*.*', { usePolling: true }, images);
+
+	const tasks = {
+		templates: './app/templates/**/[^_]*.+(njk|html)',
+		styles: './app/styles/**/[^_]*.+(scss|css)',
+		scripts: './app/scripts/**/[^_]*.js',
+		images: './app/images/**/[^_]*.+(png|jp?(e)g|gif|svg|webp)',
+	};
+
+	for (const task in tasks) {
+		watch(tasks[task], { usePolling: true }, series(task));
+	}
 }
 
 exports.watching = watching;
 
-exports.default = series(nunjucks, styles, scripts, images);
+exports.default = series(templates, styles, scripts, images);
 exports.development = series(cleanDist, exports.default, parallel(watching, browsersync));
 exports.build = series(cleanDist, exports.default);
