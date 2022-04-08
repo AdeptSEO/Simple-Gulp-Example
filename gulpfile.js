@@ -40,7 +40,7 @@ function cleanDist() {
 exports.cleanDist = cleanDist;
 
 function templates() {
-	return src('./app/templates/**/[^_]*.+(njk|html)')
+	return src('./app/templates/pages/**/[^_]*.+(njk|html)')
 		.pipe(nunjucksRender({
 			path: ['./app/templates/']
 		}))
