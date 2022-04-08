@@ -1,0 +1,34 @@
+// ВАРИАНТ А: Включите весь Bootstrap
+
+// @import "../node_modules/bootstrap/scss/bootstrap";
+
+
+
+
+
+
+// ВАРИАНТ Б. Включите части Bootstrap
+
+// 1. Сначала включите функции (чтобы Вы могли управлять цветами, SVG, вычислением и т.д.)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Включите сюда любые переопределения переменных по умолчанию
+
+// 3. Включите оставшуюся часть необходимых таблиц стилей Bootstrap
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// 4. Включите любой необязательный Bootstrap CSS по мере необходимости
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/helpers";
+
+// 5. При желании можно включить последний API утилит для генерации классов на основе карты Sass в `_utilities.scss`
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+// 6. Добавьте сюда дополнительный пользовательский код
