@@ -12,6 +12,7 @@
 	"devDependencies": {
 		"@babel/core": "^7.17.9",
 		"@babel/preset-env": "^7.16.11",
+		"browser-sync": "^2.27.7",
 		"babel-loader": "^8.2.4",
 		"cross-env": "^7.0.3",
 		"del": "^6.0.0",
@@ -32,7 +33,6 @@
 	"dependencies": {
 		"@fancyapps/fancybox": "^3.5.7",
 		"@fancyapps/ui": "^4.0.11",
-		"browser-sync": "^2.27.7",
 		"rateyo": "^2.3.2",
 		"jquery": "^3.6.0",
 		"slick-carousel": "^1.8.1",
