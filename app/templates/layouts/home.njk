@@ -1,0 +1,16 @@
+{% set layouts = "home" %}
+
+<!DOCTYPE html>
+<html class="page no-js" lang="ru">
+
+	{% include "blocks/head.njk" %}
+
+	<body class="page">
+		{% include "blocks/header.njk" %}
+		{% block body %}
+		{% endblock %}
+		{% include "blocks/footer.njk" %}
+		{% include "blocks/scripts.njk" %}
+	</body>
+
+</html>
