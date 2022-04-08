@@ -2,7 +2,7 @@
 
 ## Установка
 
-Клонируйте репозиторий: `git clone git@github.com:shotlandec1980/Gulp-Nunjucks.git projectName && cd projectName`
+Клонируйте репозиторий: `https://github.com/shotlandec1980/Simple-Gulp-Example.git projectName && cd projectName`
 
 Установить зависимости проекта: `npm i`
 
