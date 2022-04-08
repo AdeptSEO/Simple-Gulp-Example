@@ -42,7 +42,10 @@ exports.cleanDist = cleanDist;
 function templates() {
 	return src('./app/templates/pages/**/[^_]*.+(njk|html)')
 		.pipe(nunjucksRender({
-			path: ['./app/templates/']
+			path: ['./app/templates/'],
+			manageEnv: function(environment) {
+				environment.addGlobal('IS_PRODUCTION', process.env.NODE_ENV === 'production');
+			}
 		}))
 		.pipe(dest('./build/'))
 		.on('end', browserSync.reload);

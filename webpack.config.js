@@ -13,7 +13,7 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, 'build', 'js'),
-		filename: isDevelopment ? '[name].js' : 'min.[name].js',
+		filename: isDevelopment ? '[name].js' : '[name].min.js',
 	},
 	devtool: isDevelopment ? 'cheap-module-source-map' : false,
 	stats: isDevelopment ? 'errors-only' : 'normal',

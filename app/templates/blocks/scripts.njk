@@ -1,1 +1,5 @@
-<script async src="js/main.js"></script>
+{% if IS_PRODUCTION %}
+	<script async src="js/main.min.js"></script>
+{% else %}
+	<script async src="js/main.js"></script>
+{% endif %}
