@@ -2,9 +2,13 @@
 
 ## Установка
 
-Клонируйте репозиторий: `https://github.com/shotlandec1980/Simple-Gulp-Example.git projectName && cd projectName`
+Клонируйте репозиторий: 
 
-Установить зависимости проекта: `npm i`
+`git clone https://github.com/shotlandec1980/Simple-Gulp-Example.git projectName && cd projectName`
+
+Установить зависимости проекта: 
+
+`npm i`
 
 ### Команды
 
