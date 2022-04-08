@@ -1,7 +1,6 @@
 'use strict';
 
 const { src, dest, watch, parallel, series } = require('gulp');
-
 const sass = require('gulp-sass')(require('sass'));
 const gulpif = require('gulp-if');
 const sassGlob = require('gulp-sass-glob');
@@ -23,7 +22,12 @@ function browsersync() {
 		server: {
 			baseDir: './build/',
 		},
-		notify: false,
+		port: 3000,
+		open: true,
+		notify: true,
+		browser: 'default',
+		online: true,
+		// logLevel: 'debug',
 	});
 }
 exports.browsersync = browsersync;
@@ -100,10 +104,10 @@ function images() {
 exports.images = images;
 
 function watching() {
-	watch('./app/templates/**/*.njk', nunjucks);
-	watch('./app/styles/**/*.scss', styles);
-	watch('./app/scripts/**/*.js', scripts);
-	watch('./app/images/**/*.*', images);
+	watch('./app/templates/**/*.njk', { usePolling: true }, nunjucks);
+	watch('./app/styles/**/*.scss', { usePolling: true }, styles);
+	watch('./app/scripts/**/*.js', { usePolling: true }, scripts);
+	watch('./app/images/**/*.*', { usePolling: true }, images);
 }
 
 exports.watching = watching;

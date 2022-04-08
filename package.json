@@ -1,7 +1,7 @@
 {
 	"name": "simple-gulp-example",
 	"version": "1.0.0",
-	"description": ":fire: A starter boilerplate for coding with Gulp, Nunjucks, Webpack and Sass",
+	"description": ":fire: A simple starter template for coding with Gulp, Nunjucks, Webpack and Sass.",
 	"keywords": [
 		"front-end-development",
 		"front-end-starter-kit",
