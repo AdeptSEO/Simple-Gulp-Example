@@ -9,6 +9,8 @@ const rename = require('gulp-rename');
 const sass = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
 const autoprefixer = require('gulp-autoprefixer');
+const gcmq = require('gulp-group-css-media-queries');
+const cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const nunjucksRender = require('gulp-nunjucks-render');
 const htmlBeautify = require('gulp-html-beautify');
@@ -79,6 +81,27 @@ function styles() {
 			grid: false,
 			cascade: true,
 			flexbox: 'no-2009',
+		})))
+		.pipe(gulpif(!isDevelopment, gcmq()))
+		.pipe(gulpif(!isDevelopment, cleanCSS({
+			level: {
+				2: {
+					mergeAdjacentRules: true,
+					mergeIntoShorthands: true,
+					mergeMedia: true,
+					mergeNonAdjacentRules: true,
+					mergeSemantically: false,
+					overrideProperties: true,
+					removeEmpty: true,
+					reduceNonAdjacentRules: true,
+					removeDuplicateFontRules: true,
+					removeDuplicateMediaBlocks: true,
+					removeDuplicateRules: true,
+					removeUnusedAtRules: false,
+					restructureRules: false,
+					skipProperties: [],
+				},
+			},
 		})))
 		.pipe(gulpif(!isDevelopment, rename({
 			suffix: '.min',
