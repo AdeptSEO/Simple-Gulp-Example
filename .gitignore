@@ -4,7 +4,7 @@
 # .npmrc
 Thumbs.db
 ex_files
-# build
+build
 public
 node_modules
 bower_components
