@@ -50,6 +50,7 @@
 		"del": "^6.0.0",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^8.0.0",
+		"gulp-gh-pages": "^0.5.4",
 		"gulp-if": "^3.0.0",
 		"gulp-imagemin": "^7.1.0",
 		"gulp-nunjucks-render": "^2.2.3",
