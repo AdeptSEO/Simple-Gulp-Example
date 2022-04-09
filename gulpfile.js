@@ -107,13 +107,6 @@ function images() {
 
 exports.images = images;
 
-function deploy() {
-	return src('./build/**/*')
-		.pipe(ghPages())
-}
-
-exports.deploy = deploy;
-
 function watching() {
 
 	const tasks = {
