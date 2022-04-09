@@ -20,6 +20,8 @@
 
 <ul>
 	{% for item in menu_header %}
-		<li><a href="{{ item.url }}">{{ item.title }}</a></li>
+		<li>
+			<a href="{{ item.url }}">{{ item.title }}</a>
+		</li>
 	{% endfor %}
 </ul>
