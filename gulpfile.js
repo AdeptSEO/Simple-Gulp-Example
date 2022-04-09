@@ -11,6 +11,7 @@ const sassGlob = require('gulp-sass-glob');
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const nunjucksRender = require('gulp-nunjucks-render');
+const htmlBeautify = require('gulp-html-beautify');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
@@ -47,6 +48,13 @@ function templates() {
 				environment.addGlobal('IS_PRODUCTION', process.env.NODE_ENV === 'production');
 			}
 		}))
+		.pipe(gulpif(!isDevelopment, htmlBeautify({
+			eol: '\r\n',
+			indent_with_tabs: true,
+			preserve_newlines: false,
+			end_with_newline: true,
+			unformatted: [],
+		})))
 		.pipe(dest('./build/'))
 		.on('end', browserSync.reload);
 }
