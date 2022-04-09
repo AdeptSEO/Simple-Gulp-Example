@@ -1,4 +1,11 @@
 <footer class="footer">
-   <p>это подвал</p>
+   <h3>Это подвал</h3>
+   <ul>
+      {% for item in global.menu_footer %}
+         <li>
+            <a href="{{ item.url }}">{{ item.title }}</a>
+         </li>
+      {% endfor %}
+   </ul>
    <div class="copyright">{{ global.copyright }}</div>
 </footer>

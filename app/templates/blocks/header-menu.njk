@@ -1,0 +1,25 @@
+{% set menu_header = [
+	{
+		'title': 'Home',
+		'url': 'index.html',
+		'slug': 'home'
+	}, {
+		'title': 'About',
+		'url': 'about.html',
+		'slug': 'about'
+	}, {
+		'title': 'Prices',
+		'url': 'prices.html',
+		'slug': 'prices'
+	}, {
+		'title': 'Contact',
+		'url': 'contact.html',
+		'slug': 'contact'
+	}
+] %}
+
+<ul>
+	{% for item in menu_header %}
+		<li><a href="{{ item.url }}">{{ item.title }}</a></li>
+	{% endfor %}
+</ul>
