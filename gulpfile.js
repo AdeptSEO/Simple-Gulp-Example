@@ -2,7 +2,6 @@
 
 const { src, dest, watch, parallel, series } = require('gulp');
 
-const ghPages = require('gulp-gh-pages');
 const browserSync = require('browser-sync').create();
 const gulpif = require('gulp-if');
 const del = require('del');
