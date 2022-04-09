@@ -1,0 +1,25 @@
+{# Global variables {{ global.phone }} or {{ global.email }} #}
+
+{% set author = "John Doe" %}
+{% set phone = "(123) 456-7890" %}
+{% set email = "name@example.com" %}
+{% set language = "ru" %}
+{% set site_name = "Мой сайт" %}
+{% set copyright = "Copyright © 2000-2020" %}
+{% set google_analytics = "" %}
+{% set yandex_metrika = "" %}
+{% set menu_footer = [
+	{
+		'title': 'Home',
+		'url': 'index.html',
+		'slug': 'home'
+	}, {
+		'title': 'Service',
+		'url': 'services.html',
+		'slug': 'service'
+	}, {
+		'title': 'Contact',
+		'url': 'contact.html',
+		'slug': 'contact'
+	}
+] %}
